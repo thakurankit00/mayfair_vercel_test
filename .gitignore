@@ -151,7 +151,6 @@ yarn-error.log*
 
 # Vercel
 .vercel
-.vercel-secrets.txt
 
 # Typescript
 *.tsbuildinfo
