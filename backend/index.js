@@ -29,7 +29,7 @@ app.use(cors({
     'http://localhost:3001',
     'http://localhost:3002',
     process.env.CORS_ORIGIN,
-    'https://mayfair-steel.vercel.app'
+    'https://mayfair-hotel-begd.vercel.app'
   ].filter(Boolean),
   credentials: true
 }));
@@ -62,108 +62,56 @@ app.get('/api/test', (req, res) => {
   });
 });
 
-// Debug endpoint for environment variables (remove in production)
-app.get('/api/debug', (req, res) => {
-  const envCheck = {
-    NODE_ENV: process.env.NODE_ENV,
-    DATABASE_URL: process.env.DATABASE_URL ? 'SET' : 'NOT SET',
-    SUPABASE_URL: process.env.SUPABASE_URL ? 'SET' : 'NOT SET',
-    SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY ? 'SET' : 'NOT SET',
-    JWT_SECRET: process.env.JWT_SECRET ? 'SET' : 'NOT SET',
-    CORS_ORIGIN: process.env.CORS_ORIGIN || 'NOT SET'
-  };
-
-  res.status(200).json({
-    success: true,
-    environment: envCheck,
-    timestamp: new Date().toISOString()
-  });
-});
-
-// Import and use routes (with detailed error handling)
-let routesLoaded = false;
-
+// Import and use routes (with error handling)
 try {
-  console.log('Loading routes...');
+  const authRoutes = require('./src/routes/auth');
+  const userRoutes = require('./src/routes/users');
+  const dashboardRoutes = require('./src/routes/dashboard');
+  const roomRoutes = require('./src/routes/rooms');
+  const bookingRoutes = require('./src/routes/bookings');
+  const restaurantRoutes = require('./src/routes/restaurant');
+  const uploadRoutes = require('./src/routes/upload');
+  const reportsRoutes = require('./src/routes/reports');
+
+  // API routes
+  app.use('/api/v1/auth', authRoutes);
+  app.use('/api/v1/users', userRoutes);
+  app.use('/api/v1/dashboard', dashboardRoutes);
+  app.use('/api/v1/rooms', roomRoutes);
+  app.use('/api/v1/bookings', bookingRoutes);
+  app.use('/api/v1/restaurant', restaurantRoutes);
+  app.use('/api/v1/upload', uploadRoutes);
+  app.use('/api/v1/reports', reportsRoutes);
   
-  // Load routes one by one with individual error handling
-  const routes = [
-    { name: 'auth', path: './src/routes/auth', route: '/api/v1/auth' },
-    { name: 'users', path: './src/routes/users', route: '/api/v1/users' },
-    { name: 'dashboard', path: './src/routes/dashboard', route: '/api/v1/dashboard' },
-    { name: 'rooms', path: './src/routes/rooms', route: '/api/v1/rooms' },
-    { name: 'bookings', path: './src/routes/bookings', route: '/api/v1/bookings' },
-    { name: 'restaurant', path: './src/routes/restaurant', route: '/api/v1/restaurant' },
-    { name: 'upload', path: './src/routes/upload', route: '/api/v1/upload' }
-  ];
-
-  for (const routeConfig of routes) {
-    try {
-      const routeModule = require(routeConfig.path);
-      app.use(routeConfig.route, routeModule);
-      console.log(`✅ Loaded ${routeConfig.name} routes`);
-    } catch (err) {
-      console.error(`❌ Failed to load ${routeConfig.name} routes:`, err.message);
-      
-      // Create a fallback route for this specific endpoint
-      app.use(routeConfig.route, (req, res) => {
-        res.status(503).json({
-          success: false,
-          error: {
-            code: 'ROUTE_UNAVAILABLE',
-            message: `${routeConfig.name} routes are temporarily unavailable`,
-            details: err.message
-          }
-        });
-      });
-    }
-  }
-
-  // Optional routes
-  try {
-    const reportsRoutes = require('./src/routes/reports');
-    app.use('/api/v1/reports', reportsRoutes);
-    console.log('✅ Loaded reports routes');
-  } catch (err) {
-    console.log('Reports routes not available:', err.message);
-  }
-
   try {
     const paymentsRoutes = require('./src/routes/payments');
     app.use('/api/v1/payments', paymentsRoutes);
-    console.log('✅ Loaded payments routes');
   } catch (err) {
     console.log('Payments routes not available:', err.message);
   }
 
-  routesLoaded = true;
-  console.log('✅ Route loading completed');
+  // Notifications route (optional - was disabled in original)
+  try {
+    const notificationRoutes = require('./src/routes/notificationRoutes');
+    app.use('/api/v1/notifications', notificationRoutes);
+  } catch (err) {
+    console.log('Notification routes not available:', err.message);
+  }
 
 } catch (error) {
-  console.error('❌ Critical error loading routes:', error);
-  routesLoaded = false;
-}
-
-// Fallback for any unhandled API routes
-app.use('/api/*', (req, res) => {
-  if (!routesLoaded) {
+  console.error('Error loading routes:', error);
+  
+  // Fallback API endpoint
+  app.use('/api/*', (req, res) => {
     res.status(503).json({
       success: false,
       error: {
         code: 'SERVICE_UNAVAILABLE',
-        message: 'API routes are temporarily unavailable - server initialization failed'
+        message: 'API routes are temporarily unavailable'
       }
     });
-  } else {
-    res.status(404).json({
-      success: false,
-      error: {
-        code: 'NOT_FOUND',
-        message: 'API endpoint not found'
-      }
-    });
-  }
-});
+  });
+}
 
 // Serve React static files
 app.use(express.static(path.join(__dirname, '../frontend/build')));
@@ -197,4 +145,3 @@ app.use((error, req, res, next) => {
 
 // Export for Vercel (serverless)
 module.exports = app;
-
