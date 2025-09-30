@@ -1,0 +1,768 @@
+VERCEL MASTER BUILD LOGS:
+
+16:33:05.705 Running build in Washington, D.C., USA (East) – iad1
+16:33:05.705 Build machine configuration: 2 cores, 8 GB
+16:33:05.719 Cloning github.com/thakurankit00/mayfair-hotel (Branch: master, Commit: ea6dcda)
+16:33:06.839 Skipping build cache, deployment was triggered without cache.
+16:33:07.558 Cloning completed: 1.839s
+16:33:07.613 Found .vercelignore
+16:33:07.630 Removed 70 ignored files defined in .vercelignore
+16:33:07.630   /.git/config
+16:33:07.630   /.git/description
+16:33:07.631   /.git/FETCH_HEAD
+16:33:07.631   /.git/HEAD
+16:33:07.631   /.git/hooks/applypatch-msg.sample
+16:33:07.631   /.git/hooks/commit-msg.sample
+16:33:07.631   /.git/hooks/fsmonitor-watchman.sample
+16:33:07.631   /.git/hooks/post-update.sample
+16:33:07.631   /.git/hooks/pre-applypatch.sample
+16:33:07.631   /.git/hooks/pre-commit.sample
+16:33:07.876 Running "vercel build"
+16:33:08.309 Vercel CLI 48.1.6
+16:33:08.485 WARN! Due to `builds` existing in your configuration file, the Build and Development Settings defined in your Project Settings will not apply. Learn More: https://vercel.link/unused-build-settings
+16:33:08.980 Warning: Detected "engines": { "node": ">=18.0.0" } in your `package.json` that will automatically upgrade when a new major Node.js Version is released. Learn More: http://vercel.link/node-version
+16:33:08.986 Installing dependencies...
+16:33:49.691 npm warn deprecated @babel/plugin-proposal-export-namespace-from@7.18.9: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-export-namespace-from instead.
+16:33:49.711 npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+16:33:50.250 npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+16:33:50.299 npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+16:33:50.461 npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+16:33:50.672 npm warn deprecated gauge@4.0.4: This package is no longer supported.
+16:33:52.097 npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+16:33:52.388 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+16:33:52.456 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+16:33:52.516 npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+16:33:53.041 npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+16:33:53.172 npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+16:33:53.351 npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+16:33:53.351 npm warn deprecated
+16:33:53.351 npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+16:33:53.751 npm warn deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+16:33:54.399 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+16:33:54.483 npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+16:33:54.688 npm warn deprecated multer@1.4.5-lts.2: Multer 1.x is impacted by a number of vulnerabilities, which have been patched in 2.x. You should upgrade to the latest 2.x version.
+16:33:55.197 npm warn deprecated glob@7.1.6: Glob versions prior to v9 are no longer supported
+16:33:57.438 npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+16:34:02.364 
+16:34:02.365 > mayfair-hotel-backend@1.0.0 postinstall
+16:34:02.365 > cd ../frontend && npm install && npm run build:production
+16:34:02.366 
+16:34:46.573 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+16:34:46.767 npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+16:34:46.817 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+16:34:46.978 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+16:34:46.988 npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+16:34:47.149 npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+16:34:47.149 npm warn deprecated
+16:34:47.149 npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+16:34:47.583 npm warn deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+16:34:48.021 npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+16:34:48.497 npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+16:34:48.944 npm warn deprecated workbox-google-analytics@6.6.0: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
+16:34:49.184 npm warn deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+16:34:49.185 npm warn deprecated domexception@2.0.1: Use your platform's native DOMException instead
+16:34:49.187 npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+16:34:49.211 npm warn deprecated workbox-cacheable-response@6.6.0: workbox-background-sync@6.6.0
+16:34:50.165 npm warn deprecated @babel/plugin-proposal-private-methods@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
+16:34:50.166 npm warn deprecated @babel/plugin-proposal-numeric-separator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+16:34:50.254 npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+16:34:50.287 npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+16:34:50.288 npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+16:34:51.706 npm warn deprecated @types/jwt-decode@3.1.0: This is a stub types definition. jwt-decode provides its own type definitions, so you do not need this installed.
+16:34:51.748 npm warn deprecated @types/html2canvas@1.0.0: This is a stub types definition. html2canvas provides its own type definitions, so you do not need this installed.
+16:34:52.665 npm warn deprecated @babel/plugin-proposal-private-property-in-object@7.21.11: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
+16:34:52.678 npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions
+16:34:53.281 npm warn deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+16:34:55.601 npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+16:35:04.862 
+16:35:04.863 added 1753 packages, and audited 1754 packages in 1m
+16:35:04.863 
+16:35:04.864 292 packages are looking for funding
+16:35:04.864   run `npm fund` for details
+16:35:04.869 
+16:35:04.869 11 vulnerabilities (4 moderate, 7 high)
+16:35:04.870 
+16:35:04.870 To address all issues (including breaking changes), run:
+16:35:04.870   npm audit fix --force
+16:35:04.870 
+16:35:04.870 Run `npm audit` for details.
+16:35:05.146 
+16:35:05.146 > mayfair-hotel-frontend@1.0.0 build:production
+16:35:05.146 > node build-production.js
+16:35:05.146 
+16:35:05.197 🔧 Building frontend for production with ESLint disabled...
+16:35:05.520 
+16:35:05.521 > mayfair-hotel-frontend@1.0.0 build
+16:35:05.521 > react-scripts build
+16:35:05.522 
+16:35:06.783 Creating an optimized production build...
+16:35:40.115 Compiled successfully.
+16:35:40.116 
+16:35:40.117 File sizes after gzip:
+16:35:40.117 
+16:35:40.152   314.07 kB  build/static/js/main.7c11fda9.js
+16:35:40.152   13.07 kB   build/static/css/main.99bf80b3.css
+16:35:40.153 
+16:35:40.153 The project was built assuming it is hosted at /.
+16:35:40.153 You can control this with the homepage field in your package.json.
+16:35:40.154 
+16:35:40.154 The build folder is ready to be deployed.
+16:35:40.155 You may serve it with a static server:
+16:35:40.155 
+16:35:40.155   npm install -g serve
+16:35:40.155   serve -s build
+16:35:40.155 
+16:35:40.155 Find out more about deployment here:
+16:35:40.155 
+16:35:40.156   https://cra.link/deployment
+16:35:40.156 
+16:35:40.222 npm notice
+16:35:40.222 npm notice New major version of npm available! 10.9.3 -> 11.6.1
+16:35:40.222 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.1
+16:35:40.222 npm notice To update run: npm install -g npm@11.6.1
+16:35:40.222 npm notice
+16:35:40.228 ✅ Frontend build completed successfully!
+16:35:40.260 
+16:35:40.261 added 1168 packages in 3m
+16:35:40.261 
+16:35:40.262 180 packages are looking for funding
+16:35:40.262   run `npm fund` for details
+16:35:40.318 Running "npm run vercel-build"
+16:35:40.432 
+16:35:40.438 > mayfair-hotel-backend@1.0.0 vercel-build
+16:35:40.438 > cd ../frontend && npm install && npm run build
+16:35:40.438 
+16:35:43.076 
+16:35:43.077 up to date, audited 1754 packages in 3s
+16:35:43.077 
+16:35:43.077 292 packages are looking for funding
+16:35:43.077   run `npm fund` for details
+16:35:43.095 
+16:35:43.096 11 vulnerabilities (4 moderate, 7 high)
+16:35:43.096 
+16:35:43.096 To address all issues (including breaking changes), run:
+16:35:43.096   npm audit fix --force
+16:35:43.096 
+16:35:43.096 Run `npm audit` for details.
+16:35:43.221 
+16:35:43.221 > mayfair-hotel-frontend@1.0.0 build
+16:35:43.222 > react-scripts build
+16:35:43.222 
+16:35:44.179 Creating an optimized production build...
+16:36:04.196 Compiled successfully.
+16:36:04.197 
+16:36:04.197 File sizes after gzip:
+16:36:04.197 
+16:36:04.231   314.07 kB  build/static/js/main.7c11fda9.js
+16:36:04.232   13.07 kB   build/static/css/main.99bf80b3.css
+16:36:04.232 
+16:36:04.233 The project was built assuming it is hosted at /.
+16:36:04.233 You can control this with the homepage field in your package.json.
+16:36:04.233 
+16:36:04.233 The build folder is ready to be deployed.
+16:36:04.233 You may serve it with a static server:
+16:36:04.233 
+16:36:04.234   npm install -g serve
+16:36:04.234   serve -s build
+16:36:04.234 
+16:36:04.234 Find out more about deployment here:
+16:36:04.234 
+16:36:04.234   https://cra.link/deployment
+16:36:04.234 
+16:36:11.786 Build Completed in /vercel/output [3m]
+16:36:12.235 Deploying outputs...
+16:36:23.751 Deployment completed
+16:36:24.691 Creating build cache...
+16:37:03.371 Created build cache: 38.680s
+16:37:03.372 Uploading build cache [125.70 MB]
+16:37:05.373 Build cache uploaded: 2.003s
+
+
+VS  
+
+
+
+MASTER BUILD LOGS
+
+20:25:52.862 Running build in Washington, D.C., USA (East) – iad1
+20:25:52.863 Build machine configuration: 2 cores, 8 GB
+20:25:52.877 Retrieving list of deployment files...
+20:25:53.446 Downloading 189 deployment files...
+20:25:54.629 Restored build cache from previous deployment (DQh6J9Qa56LnePu8hbNF44P4idPs)
+20:25:55.085 Running "vercel build"
+20:25:55.472 Vercel CLI 48.1.6
+20:25:55.632 WARN! Due to `builds` existing in your configuration file, the Build and Development Settings defined in your Project Settings will not apply. Learn More: https://vercel.link/unused-build-settings
+20:25:56.114 Warning: Detected "engines": { "node": ">=18.0.0" } in your `package.json` that will automatically upgrade when a new major Node.js Version is released. Learn More: http://vercel.link/node-version
+20:25:56.119 Installing dependencies...
+20:26:00.883 
+20:26:00.884 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:00.884 > cd ../frontend && npm install && CI=false DISABLE_ESLINT_PLUGIN=true npm run build
+20:26:00.884 
+20:26:32.169 npm warn deprecated @babel/plugin-proposal-export-namespace-from@7.18.9: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-export-namespace-from instead.
+20:26:32.192 npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+20:26:33.859 npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+20:26:34.026 npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+20:26:34.135 npm warn deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+20:26:34.239 npm warn deprecated multer@1.4.5-lts.2: Multer 1.x is impacted by a number of vulnerabilities, which have been patched in 2.x. You should upgrade to the latest 2.x version.
+20:26:34.388 npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+20:26:34.979 npm warn deprecated glob@7.1.6: Glob versions prior to v9 are no longer supported
+20:26:44.649 
+20:26:44.649 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:44.649 > cd ../frontend && npm install && npm run build:production
+20:26:44.650 
+20:26:46.439 
+20:26:46.440 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:46.440 > cd ../frontend && npm install && npm run build:production
+20:26:46.443 
+20:26:48.253 
+20:26:48.254 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:48.254 > cd ../frontend && npm install && npm run build:production
+20:26:48.254 
+20:26:50.065 
+20:26:50.066 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:50.067 > cd ../frontend && npm install && npm run build:production
+20:26:50.067 
+20:26:51.913 
+20:26:51.914 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:51.914 > cd ../frontend && npm install && npm run build:production
+20:26:51.914 
+20:26:53.580 
+20:26:53.580 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:53.581 > cd ../frontend && npm install && npm run build:production
+20:26:53.581 
+20:26:55.373 
+20:26:55.374 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:55.375 > cd ../frontend && npm install && npm run build:production
+20:26:55.375 
+20:26:57.219 
+20:26:57.219 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:57.219 > cd ../frontend && npm install && npm run build:production
+20:26:57.219 
+20:26:59.022 
+20:26:59.023 > mayfair-hotel-backend@1.0.0 postinstall
+20:26:59.023 > cd ../frontend && npm install && npm run build:production
+20:26:59.024 
+20:27:00.815 
+20:27:00.816 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:00.816 > cd ../frontend && npm install && npm run build:production
+20:27:00.816 
+20:27:02.609 
+20:27:02.609 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:02.609 > cd ../frontend && npm install && npm run build:production
+20:27:02.609 
+20:27:04.376 
+20:27:04.377 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:04.377 > cd ../frontend && npm install && npm run build:production
+20:27:04.378 
+20:27:06.178 
+20:27:06.179 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:06.179 > cd ../frontend && npm install && npm run build:production
+20:27:06.179 
+20:27:08.442 
+20:27:08.442 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:08.442 > cd ../frontend && npm install && npm run build:production
+20:27:08.442 
+20:27:10.681 
+20:27:10.681 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:10.682 > cd ../frontend && npm install && npm run build:production
+20:27:10.682 
+20:27:12.547 
+20:27:12.548 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:12.548 > cd ../frontend && npm install && npm run build:production
+20:27:12.548 
+20:27:14.393 
+20:27:14.394 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:14.394 > cd ../frontend && npm install && npm run build:production
+20:27:14.394 
+20:27:16.258 
+20:27:16.259 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:16.259 > cd ../frontend && npm install && npm run build:production
+20:27:16.259 
+20:27:18.137 
+20:27:18.137 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:18.139 > cd ../frontend && npm install && npm run build:production
+20:27:18.139 
+20:27:20.004 
+20:27:20.005 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:20.005 > cd ../frontend && npm install && npm run build:production
+20:27:20.005 
+20:27:21.884 
+20:27:21.885 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:21.885 > cd ../frontend && npm install && npm run build:production
+20:27:21.885 
+20:27:24.005 
+20:27:24.006 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:24.006 > cd ../frontend && npm install && npm run build:production
+20:27:24.007 
+20:27:25.877 
+20:27:25.878 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:25.878 > cd ../frontend && npm install && npm run build:production
+20:27:25.878 
+20:27:27.669 
+20:27:27.669 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:27.669 > cd ../frontend && npm install && npm run build:production
+20:27:27.669 
+20:27:29.517 
+20:27:29.519 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:29.519 > cd ../frontend && npm install && npm run build:production
+20:27:29.519 
+20:27:31.494 
+20:27:31.494 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:31.495 > cd ../frontend && npm install && npm run build:production
+20:27:31.495 
+20:27:33.357 
+20:27:33.357 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:33.357 > cd ../frontend && npm install && npm run build:production
+20:27:33.358 
+20:27:35.207 
+20:27:35.207 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:35.208 > cd ../frontend && npm install && npm run build:production
+20:27:35.208 
+20:27:37.175 
+20:27:37.176 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:37.176 > cd ../frontend && npm install && npm run build:production
+20:27:37.176 
+20:27:39.099 
+20:27:39.099 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:39.099 > cd ../frontend && npm install && npm run build:production
+20:27:39.099 
+20:27:41.024 
+20:27:41.025 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:41.025 > cd ../frontend && npm install && npm run build:production
+20:27:41.025 
+20:27:42.908 
+20:27:42.908 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:42.909 > cd ../frontend && npm install && npm run build:production
+20:27:42.909 
+20:27:44.795 
+20:27:44.796 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:44.796 > cd ../frontend && npm install && npm run build:production
+20:27:44.796 
+20:27:46.654 
+20:27:46.654 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:46.654 > cd ../frontend && npm install && npm run build:production
+20:27:46.655 
+20:27:48.513 
+20:27:48.513 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:48.513 > cd ../frontend && npm install && npm run build:production
+20:27:48.513 
+20:27:50.337 
+20:27:50.337 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:50.338 > cd ../frontend && npm install && npm run build:production
+20:27:50.338 
+20:27:52.216 
+20:27:52.216 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:52.216 > cd ../frontend && npm install && npm run build:production
+20:27:52.216 
+20:27:54.085 
+20:27:54.086 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:54.086 > cd ../frontend && npm install && npm run build:production
+20:27:54.087 
+20:27:56.015 
+20:27:56.016 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:56.016 > cd ../frontend && npm install && npm run build:production
+20:27:56.016 
+20:27:57.945 
+20:27:57.946 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:57.946 > cd ../frontend && npm install && npm run build:production
+20:27:57.946 
+20:27:59.863 
+20:27:59.863 > mayfair-hotel-backend@1.0.0 postinstall
+20:27:59.863 > cd ../frontend && npm install && npm run build:production
+20:27:59.863 
+20:28:01.706 
+20:28:01.707 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:01.707 > cd ../frontend && npm install && npm run build:production
+20:28:01.708 
+20:28:03.590 
+20:28:03.591 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:03.591 > cd ../frontend && npm install && npm run build:production
+20:28:03.591 
+20:28:05.522 
+20:28:05.523 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:05.523 > cd ../frontend && npm install && npm run build:production
+20:28:05.523 
+20:28:07.468 
+20:28:07.469 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:07.470 > cd ../frontend && npm install && npm run build:production
+20:28:07.470 
+20:28:09.297 
+20:28:09.299 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:09.299 > cd ../frontend && npm install && npm run build:production
+20:28:09.299 
+20:28:11.157 
+20:28:11.157 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:11.158 > cd ../frontend && npm install && npm run build:production
+20:28:11.158 
+20:28:13.021 
+20:28:13.022 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:13.022 > cd ../frontend && npm install && npm run build:production
+20:28:13.022 
+20:28:14.825 
+20:28:14.827 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:14.827 > cd ../frontend && npm install && npm run build:production
+20:28:14.828 
+20:28:16.574 
+20:28:16.575 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:16.575 > cd ../frontend && npm install && npm run build:production
+20:28:16.575 
+20:28:18.397 
+20:28:18.398 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:18.398 > cd ../frontend && npm install && npm run build:production
+20:28:18.398 
+20:28:20.275 
+20:28:20.275 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:20.276 > cd ../frontend && npm install && npm run build:production
+20:28:20.276 
+20:28:22.161 
+20:28:22.161 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:22.162 > cd ../frontend && npm install && npm run build:production
+20:28:22.162 
+20:28:24.034 
+20:28:24.035 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:24.036 > cd ../frontend && npm install && npm run build:production
+20:28:24.036 
+20:28:25.971 
+20:28:25.972 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:25.972 > cd ../frontend && npm install && npm run build:production
+20:28:25.972 
+20:28:27.792 
+20:28:27.792 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:27.792 > cd ../frontend && npm install && npm run build:production
+20:28:27.793 
+20:28:29.635 
+20:28:29.635 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:29.635 > cd ../frontend && npm install && npm run build:production
+20:28:29.635 
+20:28:31.497 
+20:28:31.497 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:31.497 > cd ../frontend && npm install && npm run build:production
+20:28:31.497 
+20:28:33.333 
+20:28:33.334 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:33.334 > cd ../frontend && npm install && npm run build:production
+20:28:33.334 
+20:28:35.259 
+20:28:35.260 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:35.260 > cd ../frontend && npm install && npm run build:production
+20:28:35.260 
+20:28:37.118 
+20:28:37.119 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:37.120 > cd ../frontend && npm install && npm run build:production
+20:28:37.120 
+20:28:38.987 
+20:28:38.988 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:38.988 > cd ../frontend && npm install && npm run build:production
+20:28:38.988 
+20:28:40.817 
+20:28:40.818 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:40.819 > cd ../frontend && npm install && npm run build:production
+20:28:40.819 
+20:28:42.644 
+20:28:42.645 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:42.645 > cd ../frontend && npm install && npm run build:production
+20:28:42.646 
+20:28:44.499 
+20:28:44.499 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:44.501 > cd ../frontend && npm install && npm run build:production
+20:28:44.501 
+20:28:46.366 
+20:28:46.367 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:46.367 > cd ../frontend && npm install && npm run build:production
+20:28:46.367 
+20:28:48.222 
+20:28:48.222 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:48.223 > cd ../frontend && npm install && npm run build:production
+20:28:48.223 
+20:28:50.078 
+20:28:50.078 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:50.079 > cd ../frontend && npm install && npm run build:production
+20:28:50.079 
+20:28:51.945 
+20:28:51.946 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:51.946 > cd ../frontend && npm install && npm run build:production
+20:28:51.947 
+20:28:53.794 
+20:28:53.795 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:53.796 > cd ../frontend && npm install && npm run build:production
+20:28:53.796 
+20:28:55.645 
+20:28:55.645 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:55.646 > cd ../frontend && npm install && npm run build:production
+20:28:55.646 
+20:28:57.439 
+20:28:57.440 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:57.441 > cd ../frontend && npm install && npm run build:production
+20:28:57.441 
+20:28:59.328 
+20:28:59.328 > mayfair-hotel-backend@1.0.0 postinstall
+20:28:59.329 > cd ../frontend && npm install && npm run build:production
+20:28:59.329 
+20:29:01.130 
+20:29:01.132 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:01.132 > cd ../frontend && npm install && npm run build:production
+20:29:01.132 
+20:29:02.971 
+20:29:02.971 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:02.972 > cd ../frontend && npm install && npm run build:production
+20:29:02.972 
+20:29:04.878 
+20:29:04.879 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:04.879 > cd ../frontend && npm install && npm run build:production
+20:29:04.879 
+20:29:06.708 
+20:29:06.709 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:06.709 > cd ../frontend && npm install && npm run build:production
+20:29:06.709 
+20:29:08.588 
+20:29:08.589 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:08.589 > cd ../frontend && npm install && npm run build:production
+20:29:08.590 
+20:29:10.358 
+20:29:10.358 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:10.358 > cd ../frontend && npm install && npm run build:production
+20:29:10.358 
+20:29:12.229 
+20:29:12.229 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:12.230 > cd ../frontend && npm install && npm run build:production
+20:29:12.230 
+20:29:14.142 
+20:29:14.142 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:14.143 > cd ../frontend && npm install && npm run build:production
+20:29:14.143 
+20:29:16.003 
+20:29:16.004 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:16.005 > cd ../frontend && npm install && npm run build:production
+20:29:16.005 
+20:29:17.867 
+20:29:17.867 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:17.868 > cd ../frontend && npm install && npm run build:production
+20:29:17.868 
+20:29:19.792 
+20:29:19.793 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:19.793 > cd ../frontend && npm install && npm run build:production
+20:29:19.793 
+20:29:21.699 
+20:29:21.699 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:21.700 > cd ../frontend && npm install && npm run build:production
+20:29:21.700 
+20:29:23.600 
+20:29:23.600 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:23.600 > cd ../frontend && npm install && npm run build:production
+20:29:23.600 
+20:29:25.494 
+20:29:25.494 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:25.495 > cd ../frontend && npm install && npm run build:production
+20:29:25.495 
+20:29:27.394 
+20:29:27.395 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:27.395 > cd ../frontend && npm install && npm run build:production
+20:29:27.395 
+20:29:29.214 
+20:29:29.215 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:29.215 > cd ../frontend && npm install && npm run build:production
+20:29:29.215 
+20:29:31.087 
+20:29:31.088 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:31.088 > cd ../frontend && npm install && npm run build:production
+20:29:31.088 
+20:29:33.052 
+20:29:33.052 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:33.053 > cd ../frontend && npm install && npm run build:production
+20:29:33.053 
+20:29:35.036 
+20:29:35.037 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:35.037 > cd ../frontend && npm install && npm run build:production
+20:29:35.037 
+20:29:37.076 
+20:29:37.077 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:37.077 > cd ../frontend && npm install && npm run build:production
+20:29:37.077 
+20:29:39.065 
+20:29:39.066 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:39.066 > cd ../frontend && npm install && npm run build:production
+20:29:39.067 
+20:29:40.973 
+20:29:40.973 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:40.973 > cd ../frontend && npm install && npm run build:production
+20:29:40.973 
+20:29:42.894 
+20:29:42.895 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:42.895 > cd ../frontend && npm install && npm run build:production
+20:29:42.895 
+20:29:44.795 
+20:29:44.796 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:44.796 > cd ../frontend && npm install && npm run build:production
+20:29:44.796 
+20:29:46.701 
+20:29:46.702 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:46.702 > cd ../frontend && npm install && npm run build:production
+20:29:46.703 
+20:29:48.590 
+20:29:48.591 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:48.591 > cd ../frontend && npm install && npm run build:production
+20:29:48.591 
+20:29:50.554 
+20:29:50.554 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:50.554 > cd ../frontend && npm install && npm run build:production
+20:29:50.554 
+20:29:52.490 
+20:29:52.491 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:52.491 > cd ../frontend && npm install && npm run build:production
+20:29:52.492 
+20:29:54.399 
+20:29:54.400 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:54.400 > cd ../frontend && npm install && npm run build:production
+20:29:54.400 
+20:29:56.284 
+20:29:56.284 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:56.285 > cd ../frontend && npm install && npm run build:production
+20:29:56.285 
+20:29:58.125 
+20:29:58.126 > mayfair-hotel-backend@1.0.0 postinstall
+20:29:58.126 > cd ../frontend && npm install && npm run build:production
+20:29:58.126 
+20:30:00.018 
+20:30:00.019 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:00.019 > cd ../frontend && npm install && npm run build:production
+20:30:00.020 
+20:30:01.926 
+20:30:01.927 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:01.927 > cd ../frontend && npm install && npm run build:production
+20:30:01.927 
+20:30:03.849 
+20:30:03.850 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:03.850 > cd ../frontend && npm install && npm run build:production
+20:30:03.850 
+20:30:05.787 
+20:30:05.788 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:05.788 > cd ../frontend && npm install && npm run build:production
+20:30:05.788 
+20:30:07.782 
+20:30:07.783 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:07.784 > cd ../frontend && npm install && npm run build:production
+20:30:07.784 
+20:30:09.605 
+20:30:09.605 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:09.605 > cd ../frontend && npm install && npm run build:production
+20:30:09.605 
+20:30:11.653 
+20:30:11.654 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:11.654 > cd ../frontend && npm install && npm run build:production
+20:30:11.654 
+20:30:13.602 
+20:30:13.603 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:13.603 > cd ../frontend && npm install && npm run build:production
+20:30:13.604 
+20:30:15.524 
+20:30:15.525 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:15.525 > cd ../frontend && npm install && npm run build:production
+20:30:15.526 
+20:30:17.434 
+20:30:17.434 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:17.434 > cd ../frontend && npm install && npm run build:production
+20:30:17.434 
+20:30:19.373 
+20:30:19.375 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:19.375 > cd ../frontend && npm install && npm run build:production
+20:30:19.375 
+20:30:21.264 
+20:30:21.265 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:21.265 > cd ../frontend && npm install && npm run build:production
+20:30:21.266 
+20:30:23.155 
+20:30:23.156 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:23.156 > cd ../frontend && npm install && npm run build:production
+20:30:23.156 
+20:30:25.106 
+20:30:25.107 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:25.107 > cd ../frontend && npm install && npm run build:production
+20:30:25.108 
+20:30:26.967 
+20:30:26.968 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:26.968 > cd ../frontend && npm install && npm run build:production
+20:30:26.968 
+20:30:28.895 
+20:30:28.896 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:28.896 > cd ../frontend && npm install && npm run build:production
+20:30:28.896 
+20:30:30.842 
+20:30:30.842 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:30.843 > cd ../frontend && npm install && npm run build:production
+20:30:30.843 
+20:30:32.759 
+20:30:32.759 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:32.759 > cd ../frontend && npm install && npm run build:production
+20:30:32.759 
+20:30:34.695 
+20:30:34.696 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:34.696 > cd ../frontend && npm install && npm run build:production
+20:30:34.696 
+20:30:36.576 
+20:30:36.578 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:36.578 > cd ../frontend && npm install && npm run build:production
+20:30:36.578 
+20:30:38.481 
+20:30:38.482 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:38.482 > cd ../frontend && npm install && npm run build:production
+20:30:38.482 
+20:30:40.441 
+20:30:40.442 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:40.442 > cd ../frontend && npm install && npm run build:production
+20:30:40.442 
+20:30:42.359 
+20:30:42.359 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:42.361 > cd ../frontend && npm install && npm run build:production
+20:30:42.361 
+20:30:44.353 
+20:30:44.354 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:44.355 > cd ../frontend && npm install && npm run build:production
+20:30:44.355 
+20:30:46.351 
+20:30:46.352 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:46.352 > cd ../frontend && npm install && npm run build:production
+20:30:46.353 
+20:30:48.336 
+20:30:48.336 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:48.336 > cd ../frontend && npm install && npm run build:production
+20:30:48.337 
+20:30:50.306 
+20:30:50.307 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:50.307 > cd ../frontend && npm install && npm run build:production
+20:30:50.307 
+20:30:52.403 
+20:30:52.403 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:52.404 > cd ../frontend && npm install && npm run build:production
+20:30:52.404 
+20:30:54.754 
+20:30:54.755 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:54.756 > cd ../frontend && npm install && npm run build:production
+20:30:54.756 
+20:30:57.718 
+20:30:57.719 > mayfair-hotel-backend@1.0.0 postinstall
+20:30:57.719 > cd ../frontend && npm install && npm run build:production
+20:30:57.719 
+20:31:12.344 
+20:31:12.344 > mayfair-hotel-backend@1.0.0 postinstall
+20:31:12.344 > cd ../frontend && npm install && npm run build:production
+20:31:12.345 
+20:31:14.718 
+20:31:14.718 > mayfair-hotel-backend@1.0.0 postinstall
+20:31:14.718 > cd ../frontend && npm install && npm run build:production
+20:31:14.718 
+20:31:17.095 
+20:31:17.096 > mayfair-hotel-backend@1.0.0 postinstall
+20:31:17.096 > cd ../frontend && npm install && npm run build:production
+20:31:17.096 
+20:31:20.017 
+20:31:20.023 > mayfair-hotel-backend@1.0.0 postinstall
+20:31:20.024 > cd ../frontend && npm install && npm run build:production
+20:31:20.024 
+20:31:26.020 
+20:31:26.022 > mayfair-hotel-backend@1.0.0 postinstall
+20:31:26.022 > cd ../frontend && npm install && npm run build:production
+20:31:26.022 
+20:31:44.520 
+20:31:44.521 > mayfair-hotel-backend@1.0.0 postinstall
+20:31:44.521 > cd ../frontend && npm install && npm run build:production
+20:31:44.522 

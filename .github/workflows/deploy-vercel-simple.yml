@@ -1,0 +1,161 @@
+name: Deploy to Vercel (Simple)
+
+# This workflow lets Vercel handle the build process
+# Faster and simpler, but less control over build environment
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
+      environment:
+        description: 'Deployment environment'
+        required: true
+        type: choice
+        options:
+          - production
+          - preview
+        default: 'preview'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    # Prevent concurrent deployments to the same branch
+    concurrency:
+      group: vercel-deploy-simple-${{ github.event.inputs.branch }}
+      cancel-in-progress: true
+    
+    steps:
+      - name: 📥 Checkout target branch code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          fetch-depth: 0
+          path: target-branch
+
+      - name: 📥 Checkout workflow branch (for Vercel files)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          path: workflow-branch
+
+      - name: 🔧 Inject Vercel support files
+        run: |
+          echo "📦 Injecting Vercel support files into target branch..."
+
+          # Copy vercel.json if it doesn't exist in target branch
+          if [ ! -f "target-branch/vercel.json" ]; then
+            echo "  → Copying vercel.json"
+            cp workflow-branch/vercel.json target-branch/vercel.json
+          else
+            echo "  ✓ vercel.json already exists in target branch"
+          fi
+
+          # Copy backend/index.js if it doesn't exist in target branch
+          if [ ! -f "target-branch/backend/index.js" ]; then
+            echo "  → Copying backend/index.js"
+            cp workflow-branch/backend/index.js target-branch/backend/index.js
+          else
+            echo "  ✓ backend/index.js already exists in target branch"
+          fi
+
+          # Update backend/package.json to add postinstall if missing
+          if [ -f "target-branch/backend/package.json" ]; then
+            if ! grep -q '"postinstall"' target-branch/backend/package.json; then
+              echo "  → Adding postinstall script to backend/package.json"
+              # Use jq to add postinstall script
+              sudo apt-get install -y jq
+              jq '.scripts.postinstall = "cd ../frontend && npm install && npm run build" | .scripts["vercel-build"] = "cd ../frontend && npm install && npm run build"' \
+                target-branch/backend/package.json > temp.json && mv temp.json target-branch/backend/package.json
+            else
+              echo "  ✓ postinstall script already exists in backend/package.json"
+            fi
+          fi
+
+          echo "✅ Vercel support files ready!"
+
+          # Move to target branch directory for deployment
+          cd target-branch
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: 🔗 Link Vercel Project
+        working-directory: ./target-branch
+        run: |
+          vercel link --yes \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=${{ secrets.VERCEL_ORG_ID }} \
+            --project=${{ secrets.VERCEL_PROJECT_ID }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: 🚀 Deploy to Vercel
+        id: deploy
+        working-directory: ./target-branch
+        run: |
+          if [ "${{ github.event.inputs.environment }}" == "production" ]; then
+            echo "🌟 Deploying to PRODUCTION..."
+            DEPLOY_URL=$(vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }})
+          else
+            echo "🔍 Deploying to PREVIEW..."
+            DEPLOY_URL=$(vercel deploy --yes --token=${{ secrets.VERCEL_TOKEN }})
+          fi
+
+          echo "deployment_url=$DEPLOY_URL" >> $GITHUB_OUTPUT
+          echo "✅ Deployment URL: $DEPLOY_URL"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      
+      - name: 📝 Create Deployment Summary
+        run: |
+          echo "## 🚀 Deployment Complete!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** \`${{ github.event.inputs.branch }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Environment:** \`${{ github.event.inputs.environment }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Deployment URL:** ${{ steps.deploy.outputs.deployment_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Deployment Details" >> $GITHUB_STEP_SUMMARY
+          echo "- **Workflow:** Simple (Vercel builds)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by:** @${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+      
+      - name: 💬 Comment on Commit (if available)
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const deploymentUrl = '${{ steps.deploy.outputs.deployment_url }}';
+            const environment = '${{ github.event.inputs.environment }}';
+            const branch = '${{ github.event.inputs.branch }}';
+            
+            const emoji = environment === 'production' ? '🌟' : '🔍';
+            const message = `${emoji} **Vercel Deployment Complete**\n\n` +
+              `**Environment:** ${environment}\n` +
+              `**Branch:** ${branch}\n` +
+              `**URL:** ${deploymentUrl}\n\n` +
+              `Deployed via Simple workflow (Vercel builds)`;
+            
+            // Try to comment on PR if available
+            if (context.payload.pull_request) {
+              github.rest.issues.createComment({
+                issue_number: context.payload.pull_request.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: message
+              });
+            }
+
