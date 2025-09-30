@@ -56,7 +56,7 @@ module.exports = {
 
   production: {
     client: 'postgresql',
-    connection: {
+    connection: process.env.DATABASE_URL || {
       host: process.env.DB_HOST,
       port: process.env.DB_PORT,
       database: process.env.DB_NAME,
@@ -65,9 +65,17 @@ module.exports = {
       ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
     },
     pool: {
-      min: 2,
-      max: 10
+      min: 1,
+      max: 5, // Reduced for serverless environment
+      acquireTimeoutMillis: 30000,
+      createTimeoutMillis: 30000,
+      destroyTimeoutMillis: 5000,
+      idleTimeoutMillis: 30000,
+      reapIntervalMillis: 1000,
+      createRetryIntervalMillis: 200,
+      propagateCreateError: false
     },
+    acquireConnectionTimeout: 30000,
     migrations: {
       tableName: 'knex_migrations',
       directory: './database/migrations'
